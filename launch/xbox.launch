@@ -1,0 +1,36 @@
+<?xml version ="1.0"?>
+
+<launch>
+                <node
+			pkg = "rosserial_python"
+			type = "serial_node.py"
+			name = "serial_node"
+			>
+			<param name = "port" value = "/dev/ttyACM0"/>
+			<param name = "baud" value ="57600" />
+		</node>
+
+		<node
+			pkg = "joy"
+			type = "joy_node"
+			name = "joystick"
+			>
+			<param name = "dev" value = "/dev/input/js0"/>
+		</node>
+
+		<node
+			pkg="zumo"
+			type="userinput.py"
+			name="xbox_node"
+
+			>
+		</node>
+
+		
+		<node
+			pkg = "zumo"
+			type = "zumo_xbox"
+			name = "zumo_controller"
+		/>
+
+</launch>

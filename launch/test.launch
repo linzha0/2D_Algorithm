@@ -1,0 +1,24 @@
+
+<launch>
+	<group ns = "space1">
+                
+		
+		<node
+			pkg = "zumo"
+			type = "zumo_controller1"
+			name = "Zumo"
+		/>
+		<node
+			pkg = "zumo"
+			type = "determine_path1"
+			name = "Planner"
+		/>
+		<node
+			pkg = "hokuyo_node"
+			type = "hokuyo_node"
+			name = "hokuyo"
+			>
+			<param name = "port" value = "/dev/ttyACM0"/>
+		</node>
+	</group>
+</launch>
